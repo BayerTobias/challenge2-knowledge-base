@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/add-article.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="/"><span>Knowledge</span> Base</a>
+      </div>
+      <div class="header-right">
+        <a href="/add-article">Hinzufügen</a>
+        |
+        <a href="/agb">AGB</a>
+        |
+        <a href="/legal-notice">Impressum</a>
+      </div>
+    </header>
+    <main>
+      <form action="{% url 'add-article' %}" method="post">
+        {% csrf_token %}
+        <input required placeholder="Titel" name="title" type="text" />
+        <textarea required placeholder="Text" name="content"></textarea>
+        <input required placeholder="Author" name="author" type="text" />
+        <div class="button-container">
+          <button type="submit">Speichern</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

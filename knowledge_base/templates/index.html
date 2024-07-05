@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Knowledge Base</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="/"><span>Knowledge</span> Base</a>
+      </div>
+      <div class="header-right">
+        <a href="/add-article">Hinzufügen</a>
+        |
+        <a href="/agb">AGB</a>
+        |
+        <a href="/legal-notice">Impressum</a>
+      </div>
+    </header>
+    <main>
+      <section class="search-section">
+        <div class="search-section-content">
+          <h1>Knowledge Base</h1>
+          <p>Durchsuche unsere großartige Datenbank mit Fachwissen.</p>
+          <form action="{% url 'index' %}" method="get">
+            <input
+              type="text"
+              name="query"
+              placeholder="Knowledge Base durchsuchen"
+              value="{{ request.GET.query }}"
+            />
+          </form>
+        </div>
+      </section>
+      <section class="article-section">
+        {% for article in articles %}
+        <div class="article">
+          <h3>{{ article.title }}</h3>
+          <p>{{ article.content }}</p>
+        </div>
+        {% endfor %}
+        <a href="/add-article" class="add-button">+ Hinzufügen</a>
+      </section>
+    </main>
+  </body>
+</html>

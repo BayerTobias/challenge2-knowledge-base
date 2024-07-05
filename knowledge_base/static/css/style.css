@@ -1,0 +1,142 @@
+:root {
+  --dark-blue: rgb(53, 70, 80);
+  --light-blue: rgb(236, 241, 245);
+  --gray: rgb(126, 140, 149);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* ### Header ### */
+
+header {
+  background-color: var(--dark-blue);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left a {
+  font-size: 32px;
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.header-left span {
+  font-weight: 700;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--gray);
+}
+
+.header-right a {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+}
+
+/* ### Search Box ### */
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 68px);
+  min-height: calc(100svh - 68px);
+}
+
+.search-section {
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 84px;
+}
+
+.search-section-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-section-content h1 {
+  color: white;
+  font-size: 64px;
+}
+
+.search-section-content > p {
+  color: var(--gray);
+  font-size: 24px;
+  max-width: 350px;
+  text-align: center;
+}
+
+.search-section-content input {
+  width: 600px;
+  height: 48px;
+  font-size: 24px;
+  border-radius: 8px;
+  outline: transparent;
+  border: transparent;
+  padding: 8px;
+}
+
+.article-section {
+  background-color: var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  flex: 1;
+  align-items: center;
+  padding: 36px;
+  position: relative;
+}
+
+.article {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+  width: 450px;
+}
+
+.add-button {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  background-color: var(--dark-blue);
+  outline: transparent;
+  border: none;
+  font-size: 24px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 255ms ease-in-out;
+}
+
+.add-button:hover {
+  filter: brightness(0.9);
+  scale: 1.05;
+}
